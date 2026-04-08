@@ -8,7 +8,6 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-    # Кастомный метод: /api/categories/<id>/products/
     @action(detail=True, methods=['get'])
     def products(self, request, pk=None):
         category = self.get_object()

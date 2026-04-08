@@ -6,17 +6,14 @@ django.setup()
 
 from api.models import Category, Product
 
-# Clear existing data
 Product.objects.all().delete()
 Category.objects.all().delete()
 
-# Create 4 categories
 electronics = Category.objects.create(name='Electronics')
 clothing = Category.objects.create(name='Clothing')
 books = Category.objects.create(name='Books')
 home = Category.objects.create(name='Home & Kitchen')
 
-# Create 20 products
 products = [
     Product(name='Smartphone', price=699.99, description='Latest smartphone with OLED display', count=50, is_active=True, category=electronics),
     Product(name='Laptop', price=1299.99, description='High-performance laptop for professionals', count=30, is_active=True, category=electronics),
